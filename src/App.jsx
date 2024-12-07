@@ -50,11 +50,23 @@ function App() {
   return (
     <div className="App">
       <h1>Financial Data Visualization</h1>
-      <div className="chart-container">
-        <BarChart data={chartData} />
-        <LineChart data={chartData} />
-        <ScatterChart data={chartData} />
-        <BubbleChart data={chartData} />
+      <div className="chart-grid">
+        <div className="chart-item">
+          <h2>Monthly Sales</h2>
+          <BarChart data={chartData} />
+        </div>
+        <div className="chart-item">
+          <h2>Monthly Profits</h2>
+          <LineChart data={chartData} />
+        </div>
+        <div className="chart-item">
+          <h2>Expenses vs. Profits</h2>
+          <ScatterChart data={chartData} />
+        </div>
+        <div className="chart-item">
+          <h2>Combined Metrics</h2>
+          <BubbleChart data={chartData} />
+        </div>
       </div>
     </div>
   );
