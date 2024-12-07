@@ -1,11 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState, useEffect } from 'react';
+import BarChart from './components/BarChart';
+import LineChart from './components/LineChart';
+import ScatterChart from './components/ScatterChart';
+import BubbleChart from './components/BubbleChart';
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [chartData, setChartData] = useState(null);
 
+  useEffect(() => {
+    fetch('/financial_data.json')
+      .then(response => response.json())
+      .then(data => setChartData(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  if (!chartData) {
+    return <div>Loading...</div>;
+  }
+
+  /*
   return (
     <>
       <div>
@@ -30,6 +46,18 @@ function App() {
       </p>
     </>
   )
+    */
+  return (
+    <div className="App">
+      <h1>Financial Data Visualization</h1>
+      <div className="chart-container">
+        <BarChart data={chartData} />
+        <LineChart data={chartData} />
+        <ScatterChart data={chartData} />
+        <BubbleChart data={chartData} />
+      </div>
+    </div>
+  );
 }
 
 export default App
