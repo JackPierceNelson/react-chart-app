@@ -1,6 +1,6 @@
 import React from 'react';
 import ChartComponent from './ChartComponent';
-import financialData from '../data/financial_data.json';
+import financialData from './data/financial_data.json';
 // Inside the LineChart component, a data object is created:
 
 //labels are set to the months array from the financial data, which contains 60 months from January 2019 to December 2023.

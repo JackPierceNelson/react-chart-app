@@ -1,6 +1,6 @@
 import React from 'react';
 import ChartComponent from './ChartComponent';
-import financialData from '../data/financial_data.json';
+import financialData from './data/financial_data.json';
 //Inside the BubbleChart component, a data object is created:
 
 //A single dataset is defined with the label "Sales, Profits, and Expenses".

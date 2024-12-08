@@ -3,6 +3,7 @@ import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import ScatterChart from './components/ScatterChart';
 import BubbleChart from './components/BubbleChart';
+import financialData from './data/financial_data.json'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,11 +12,14 @@ function App() {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
+    setChartData(financialData)
+    /*
     fetch('/data/financial_data.json')
       .then(response => response.json())
       .then(data => {setChartData(data);
       setIsLoading(false);})
       .catch(error => console.error('Error fetching data:', error));
+      */
   }, []);
 
   if (!chartData) {
