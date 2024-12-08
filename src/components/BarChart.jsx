@@ -1,6 +1,6 @@
 import React from 'react';
 import ChartComponent from './ChartComponent';
-import financialData from './data/financial_data.json';
+import financialData from '../data/financial_data.json';
 // Inside the BarChart component, a data object is created:
 
 //labels are set to the months array from the financial data.
